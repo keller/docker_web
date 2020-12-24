@@ -6,15 +6,16 @@ ENV NODE_VERSION $NODE_VERSION
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y \
-    mariadb-client \
+    bzip2 \
+    git-core  \
     libbz2-1.0 \
     libbz2-dev \
     locales \
-    bzip2 \
-    zlib1g-dev \
-    git-core  \
+    mariadb-client \
+    nano\
     vim \
     wget \
+    zlib1g-dev \
     zsh \
     && locale-gen en_US.UTF-8
 
