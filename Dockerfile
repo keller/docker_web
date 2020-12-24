@@ -1,4 +1,4 @@
-FROM php:7.4.13-apache-buster
+FROM php:8.0.0-apache-buster
 
 ARG NODE_VERSION="14.15.3"
 ENV NODE_VERSION $NODE_VERSION
@@ -21,7 +21,7 @@ RUN apt-get update \
 
 RUN docker-php-ext-install bz2 calendar exif gettext mysqli pdo pdo_mysql
 
-RUN yes | pecl install xdebug memcache-4.0.5.2
+RUN yes | pecl install xdebug memcache-8.0
 
 COPY ./conf.d/* /usr/local/etc/php/conf.d/
 COPY ./dotfiles/* /root/
@@ -33,9 +33,9 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
 RUN bash -c 'source $NVM_DIR/nvm.sh \
-            && nvm install $NODE_VERSION \
-            && nvm alias default $NODE_VERSION \
-            && nvm use default'
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default'
 
 RUN a2enmod rewrite headers expires
 ENV TERM xterm-256color
