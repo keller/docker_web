@@ -20,7 +20,7 @@ RUN apt-get update \
     zsh \
     && locale-gen en_US.UTF-8
 
-RUN docker-php-ext-install bz2 calendar exif gettext mysqli
+RUN docker-php-ext-install bz2 calendar exif gettext mysqli pdo pdo_mysql
 
 RUN yes | pecl install xdebug memcache-4.0.5.2
 
