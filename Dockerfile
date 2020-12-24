@@ -3,8 +3,6 @@ FROM php:7.4.13-apache-buster
 ARG NODE_VERSION="14.15.3"
 ENV NODE_VERSION $NODE_VERSION
 
-ARG HOSTNAME="localhost"
-
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y \
