@@ -23,8 +23,7 @@ RUN docker-php-ext-install bz2 calendar exif gettext mysqli pdo pdo_mysql
 
 RUN yes | pecl install xdebug memcache-4.0.5.2
 
-COPY ./conf.d/* /usr/local/etc/php/conf.d/
-COPY ./dotfiles/* /root/
+RUN a2enmod rewrite headers expires
 
 # install nvm and node
 ENV NVM_DIR /usr/local/nvm
@@ -37,7 +36,10 @@ RUN bash -c 'source $NVM_DIR/nvm.sh \
             && nvm alias default $NODE_VERSION \
             && nvm use default'
 
-RUN a2enmod rewrite headers expires
+COPY ./conf.d/* /usr/local/etc/php/conf.d/
+COPY ./dotfiles/* /root/
+COPY info.php /var/www/html/index.php
+
 ENV TERM xterm-256color
 
 
