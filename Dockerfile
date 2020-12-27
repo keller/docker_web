@@ -25,13 +25,18 @@ RUN yes | pecl install xdebug memcache-8.0
 
 RUN a2enmod rewrite headers expires
 
+# Install composer
+RUN curl -sSL https://getcomposer.org/installer | php \
+    && chmod +x composer.phar \
+    && mv composer.phar /usr/local/bin/composer
+
 # install nvm and node
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
-RUN bash -c 'source $NVM_DIR/nvm.sh \
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
+    && bash -c 'source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default'
@@ -41,6 +46,3 @@ COPY ./dotfiles/* /root/
 COPY info.php /var/www/html/index.php
 
 ENV TERM xterm-256color
-
-
-
