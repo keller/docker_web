@@ -37,6 +37,7 @@ apt-get install -y \
     libicu[0-9][0-9] \
     liblttng-ust0 \
     libstdc++6 \
+    libzip-dev \
     zlib1g \
     libbz2-1.0 \
     libbz2-dev \
