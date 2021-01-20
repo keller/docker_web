@@ -11,3 +11,7 @@ a2enmod rewrite headers expires
 curl -sSL https://getcomposer.org/installer | php \
     && chmod +x composer.phar \
     && mv composer.phar /usr/local/bin/composer
+cat << 'EOF' >> /root/.zshrc
+export PATH="$PATH:/root/.composer/vendor/bin"
+EOF
+
