@@ -30,6 +30,7 @@ apt-get install -y \
     lsb-release \
     apt-transport-https \
     dialog \
+    dnsutils \
     libc6 \
     libgcc1 \
     libkrb5-3 \
