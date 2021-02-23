@@ -48,6 +48,7 @@ apt-get install -y \
     ncdu \
     man-db \
     strace \
+    telnet \
     zlib1g-dev \
     zsh
 
