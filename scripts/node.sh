@@ -2,16 +2,12 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-NVM_DIR=${1}
+NODE_DIR=${1}
 NODE_VERSION=${2}
 
-curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
-    && bash -c 'source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION \
-    && nvm use default'
+mkdir node-build && curl --silent -L https://github.com/nodenv/node-build/archive/refs/tags/v4.9.33.tar.gz | tar xz -C node-build --strip-components 1
+PREFIX=/usr/local ./node-build/install.sh
+rm -rf ~/node-build
+node-build $NODE_VERSION $NODE_DIR/v$NODE_VERSION
 
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | (OUT=$(apt-key add - 2>&1) || echo $OUT)
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update
-apt-get -y install --no-install-recommends yarn
+npm install --global yarn@1.22.10

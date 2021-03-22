@@ -15,10 +15,10 @@ RUN bash /tmp/scripts/php.sh
 COPY ./conf.d/* /usr/local/etc/php/conf.d/
 
 # install nvm and node
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ENV NODE_DIR /usr/local/node
+ENV NODE_PATH $NODE_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NODE_DIR/v$NODE_VERSION/bin:$PATH
 
-RUN bash /tmp/scripts/node.sh "${NVM_DIR}" "${NODE_VERSION}"
+RUN bash /tmp/scripts/node.sh "${NODE_DIR}" "${NODE_VERSION}"
 
 ENV TERM xterm-256color
