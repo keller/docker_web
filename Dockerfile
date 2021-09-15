@@ -1,6 +1,6 @@
-FROM php:7.4.16-apache-buster
+FROM php:7.4.23-apache-buster
 
-ARG NODE_VERSION="14.15.3"
+ARG NODE_VERSION="16.3.0"
 ENV NODE_VERSION $NODE_VERSION
 
 COPY ./scripts/* /tmp/scripts/
@@ -14,10 +14,10 @@ RUN bash /tmp/scripts/debian.sh
 RUN bash /tmp/scripts/php.sh
 COPY ./conf.d/* /usr/local/etc/php/conf.d/
 
-# install nvm and node
 ENV NODE_DIR /usr/local/node
 ENV NODE_PATH $NODE_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NODE_DIR/v$NODE_VERSION/bin:$PATH
+
+ENV PATH $NODE_DIR/v$NODE_VERSION/bin:/root/.composer/vendor/bin:$PATH
 
 RUN bash /tmp/scripts/node.sh "${NODE_DIR}" "${NODE_VERSION}"
 
