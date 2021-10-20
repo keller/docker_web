@@ -31,6 +31,7 @@ apt-get install -y \
     apt-transport-https \
     dialog \
     dnsutils \
+    fd-find \
     libc6 \
     libgcc1 \
     libkrb5-3 \
@@ -47,6 +48,7 @@ apt-get install -y \
     sudo \
     ncdu \
     man-db \
+    ripgrep \
     strace \
     telnet \
     zlib1g-dev \
