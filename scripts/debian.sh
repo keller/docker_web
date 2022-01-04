@@ -48,6 +48,8 @@ apt-get install -y \
     sudo \
     ncdu \
     man-db \
+    python3 \
+    python3-pip \
     ripgrep \
     strace \
     telnet \
@@ -56,6 +58,10 @@ apt-get install -y \
 
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
+
+ln -s /usr/bin/python3 /usr/bin/python
+
+pip install ansible==4.2.0 passlib aws-inventory PyYAML boto3 python-dynamodb-lock
 
 cat << 'EOF' >> /root/.zshrc
 autoload -U colors
