@@ -39,6 +39,9 @@ apt-get install -y \
     libicu[0-9][0-9] \
     libicu-dev \
     liblttng-ust0 \
+    libreadline-dev \
+    libssl-dev \
+    libsqlite3-dev \
     libstdc++6 \
     libzip-dev \
     zlib1g \
@@ -48,8 +51,7 @@ apt-get install -y \
     sudo \
     ncdu \
     man-db \
-    python3 \
-    python3-pip \
+    python3-openssl \
     ripgrep \
     strace \
     telnet \
@@ -58,10 +60,6 @@ apt-get install -y \
 
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
-
-ln -s /usr/bin/python3 /usr/bin/python
-
-pip install ansible==4.2.0 passlib aws-inventory PyYAML boto3 python-dynamodb-lock
 
 cat << 'EOF' >> /root/.zshrc
 autoload -U colors
