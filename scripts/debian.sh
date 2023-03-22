@@ -71,3 +71,5 @@ PROMPT="%F{6}%d%f %F{8}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f"$'\n'"%
 export HISTFILE=~/.zsh_history
 SAVEHIST=10000
 EOF
+
+rm -rf /var/lib/apt/lists/*
