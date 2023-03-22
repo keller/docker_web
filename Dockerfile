@@ -1,4 +1,4 @@
-FROM php:7.4.27-apache-bullseye
+FROM php:8.2.4-apache-bullseye
 
 ARG NODE_VERSION="16.3.0"
 ENV NODE_VERSION $NODE_VERSION

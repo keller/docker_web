@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 docker-php-ext-install bz2 calendar exif gettext intl mysqli pdo pdo_mysql zip
 
-yes | pecl install xdebug memcache-4.0.5.2
+yes | pecl install xdebug memcache-8.0
 
 a2enmod rewrite headers expires
 
