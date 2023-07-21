@@ -7,61 +7,64 @@ apt-get update
 
 apt-get install -y \
     bzip2 \
-    git  \
-    mariadb-client \
-    nano\
-    vim \
-    wget \
-    openssh-client \
-    gnupg2 \
-    iproute2 \
-    procps \
-    lsof \
-    htop \
-    net-tools \
-    psmisc \
-    curl \
-    rsync \
     ca-certificates \
-    unzip \
-    zip \
-    less \
-    jq \
-    lsb-release \
-    apt-transport-https \
+    curl \
     dialog \
     dnsutils \
     fd-find \
-    libc6 \
-    libgcc1 \
-    libkrb5-3 \
-    libgssapi-krb5-2 \
-    libicu[0-9][0-9] \
-    libicu-dev \
-    liblttng-ust0 \
-    libstdc++6 \
-    libzip-dev \
-    zlib1g \
+    git  \
+    gnupg2 \
+    htop \
+    iproute2 \
+    jq \
+    less \
+    libasound2 \
     libbz2-1.0 \
     libbz2-dev \
+    libc6 \
+    libgbm-dev \
+    libgcc1 \
+    libgconf-2-4 \
+    libgssapi-krb5-2 \
+    libgtk-3-0 \
+    libicu-dev \
+    libicu[0-9][0-9] \
+    libkrb5-3 \
+    liblttng-ust0 \
+    libnotify-dev \
+    libnss3 \
+    libstdc++6 \
+    libxss1 \
+    libxtst6 \
+    libzip-dev \
     locales \
-    sudo \
-    ncdu \
+    lsb-release \
+    lsof \
     man-db \
-    python3 \
-    python3-pip \
+    mariadb-client \
+    nano\
+    ncdu \
+    net-tools \
+    openssh-client \
+    procps \
+    psmisc \
     ripgrep \
+    rsync \
     strace \
+    sudo \
     telnet \
+    unzip \
+    vim \
+    wget \
+    xauth \
+    xvfb \
+    zip \
+    zlib1g \
     zlib1g-dev \
     zsh
 
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
-
-ln -s /usr/bin/python3 /usr/bin/python
-
-pip install ansible==4.2.0 passlib aws-inventory PyYAML boto3 python-dynamodb-lock
 
 cat << 'EOF' >> /root/.zshrc
 autoload -U colors
