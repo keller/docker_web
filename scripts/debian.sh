@@ -27,6 +27,7 @@ apt-get install -y \
     libgconf-2-4 \
     libgssapi-krb5-2 \
     libgtk-3-0 \
+    libgtk2.0-0 \
     libicu-dev \
     libicu[0-9][0-9] \
     libkrb5-3 \
