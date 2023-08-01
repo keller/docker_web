@@ -14,4 +14,4 @@ node-build $NODE_VERSION $NODE_DIR/v$NODE_VERSION
 npm install --global yarn@1.22.10
 npm install --global cypress@12.17.2
 npm install --global mocha@10.2.0
-npm install --global newman@5.3.2
+
