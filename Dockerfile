@@ -1,6 +1,6 @@
-FROM php:7.4.27-apache-bullseye
+FROM php:7.4.33-apache-bullseye
 
-ARG NODE_VERSION="16.3.0"
+ARG NODE_VERSION="22.16.0"
 ENV NODE_VERSION=$NODE_VERSION
 
 COPY ./scripts/* /tmp/scripts/
