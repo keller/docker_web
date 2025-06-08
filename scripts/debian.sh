@@ -42,6 +42,8 @@ apt-get install -y \
     liblttng-ust0 \
     libmemcached-dev \
     libstdc++6 \
+    libjpeg-dev \
+    libpng-dev \
     libzip-dev \
     zlib1g \
     libbz2-1.0 \

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 export DEBIAN_FRONTEND=noninteractive
 
-docker-php-ext-install bz2 calendar exif gettext intl mysqli pdo pdo_mysql zip
+docker-php-ext-configure gd --enable-gd --with-jpeg
+docker-php-ext-install bz2 calendar exif gettext intl mysqli pdo pdo_mysql zip gd
 
 yes | pecl install xdebug memcache-8.0
 
